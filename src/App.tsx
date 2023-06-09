@@ -9,6 +9,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import AboutUsPage from './pages/AboutUsPage';
 import TeacherPage from './pages/TeacherPage';
+import DashboardPage from './pages/DashboardPage';
 
 function App() {
 
@@ -23,7 +24,7 @@ function App() {
         <Route path='/aboutUs' element={<AboutUsPage/>}/>
         <Route element={<ProtectedRoute isAllowed={isAuth} />}>
           <Route path='/student' element={<HomeStudent />} />
-          <Route path='/teacher' element={<TeacherPage/>} />
+          <Route path='/teacher' element={<DashboardPage/>} />
         </Route>
       </Routes>
     </BrowserRouter>
