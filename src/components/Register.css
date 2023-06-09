@@ -1,0 +1,78 @@
+/*Register*/
+
+
+.register-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    padding-top: 22vh;
+    justify-content: center;
+    background-size: cover;
+  }
+  
+  .register-form {
+    color: white;
+    width: 40vw;
+    height: 60vh;
+    padding-left: 5em;
+    padding-right: 5em;
+    padding-top: 3em;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+  }
+  
+  @media only screen and (max-width: 1200px) {
+    .register-container {
+      padding-top: 10vh;
+      justify-content: center;
+      align-items: center;
+      background-size: cover;
+    }
+  
+    .register-container form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: white;
+      width: 80vw;
+      height: 50vh;
+      padding-left: 12vw;
+      padding-right: 12vw;
+      padding-top: 12vh;
+      padding-bottom: 12vh;
+      background-color: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(4px);
+      border-radius: 15px;
+    }
+  }
+  
+  
+  .mant {
+    width: 100%;
+  
+    display: flex;
+    margin-top: 8vh;
+    justify-content: center;
+  }
+  
+  .mant img {
+    width: 100%;
+    height: auto;
+  }
+  
+  @media screen and (min-width: 1333px) {
+    .mant {
+      width: 100vw;
+      height: 90vh;
+      display: flex;
+      margin-top: 8vh;
+      justify-content: center;
+    }
+  
+    .mant img {
+      width: 100%;
+      height: 50vh;
+    }
+  }
+  
