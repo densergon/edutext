@@ -7,7 +7,7 @@ const Footer = () => {
             <Container>
                 <Row>
                     <Col md={3}>
-                        <h5>Mi Escuela Online</h5>
+                        <h5>Edutext</h5>
                         <ul className="list-unstyled">
                             <li>Sobre Nosotros</li>
                             <li>Contacto</li>
@@ -39,7 +39,7 @@ const Footer = () => {
                 </Row>
                 <Row>
                     <Col className="text-center">
-                        <p className="footer-creditos">© 2023 Mi Escuela Online. Todos los derechos reservados.</p>
+                        <p className="footer-creditos">© 2023 Edutext. Todos los derechos reservados.</p>
                     </Col>
                 </Row>
             </Container>

@@ -6,9 +6,7 @@ import { useAuthStore } from "../store/authStore";
 
 const Bar = () => {
     const isAuth = useAuthStore((state) => state.isAuth);
-    const role = useAuthStore((state) => state.isAuth);
-    console.log(role)
-
+    const role = useAuthStore((state) => state.role);
     const { setLog, setRole } = useAuthStore();
 
     const fakeLog = (e: SyntheticEvent) => {
@@ -18,7 +16,6 @@ const Bar = () => {
 
     }
 
-
     const notLogged = <Fragment>
         <NavLink to="/aboutUs" className='nav-link'>¿Quienes somos?</NavLink>
         <NavLink to="/login" className='nav-link'>Iniciar Sesión</NavLink>
@@ -26,12 +23,8 @@ const Bar = () => {
     </Fragment>
 
     const Logged = <Fragment>
-        <NavLink to="/IACheckPage" className="nav-link">Revisar tarea con IA</NavLink>
-        <NavLink to="/dashboard" className="nav-link">Dashboard</NavLink>
-        <NavLink to='/my-profile' className='nav-link' >Mi perfil</NavLink>
-        <NavLink to='/student/assignments' className='nav-link' >Ver asignaciones</NavLink>
-        <NavLink to='/student' className='nav-link' >Mis cursos</NavLink>
-        <NavLink to='/' className='nav-link' onClick={fakeLog}>Cerrar Sesión</NavLink>
+        <NavLink to="/calificacion" className="nav-link">Evaluar tarea</NavLink>
+        <NavLink to="/teacher" className="nav-link">Dashboard</NavLink>
     </Fragment>
 
 

@@ -1,0 +1,83 @@
+registro
+
+autenticacion
+
+modificar perfil
+-nombre
+-correo
+-contraseña
+
+consulta de usuarios
+-nombre
+-correo
+-grupo al que esta inscrito o al que pertenece
+-rol
+
+salir del sistema
+
+crear grupo
+-id
+-profesor a cargo
+-alumnos (minimo un alumno inscrito) para dar de alta el grupo
+
+crear curso
+-nombre del curso
+-id
+-descripción
+-categoria
+-grupo al que pertenece
+
+crear unidad dentro de curso
+-nombre de la unidad
+-id
+-curso al que pertenece
+
+
+crear asignacion
+Una asignacion es de una unidad
+-Nombre de la asignacion
+-ID
+-Unidad a la que pertenece
+-Descripcion
+-Fecha y hora de inicio
+-Fecha y hora de fin
+-definicion de tamaño de archivo de subida
+-definicion de tamaño de archivo de bajada
+
+gestionar grupos
+agregar ,ver, o quitar alumnos
+-alumnos
+
+Gestionar cursos
+se podra modifica:
+-descripcion
+-profesor a cargo
+-categoria
+
+Gestión de asignacion
+-descripcion
+-fecha y hora de inicio
+-fecha y hora de fin
+-definicion de tamaño de archivo de subida
+-defincion de tamaño de archivo de bajada
+-calificacion
+-seccion de preguntas
+
+Registro de material de lectura-Material sera añadido por el profesor a los grupos
+Se debe pedir
+-Nombre del material
+-ID
+-Grupo
+-Categoria
+
+Mostrar información de grupo
+-Profesor a cargo
+-Alumnos inscritos
+-Correo electronico del profesor y de los alumnos
+
+Consulta de calificaciones (de uno o varios grupos)
+-ID
+-Nombre completo del alumno
+-Nombre de la asignacion
+-Calificacion de la asignación
+-Promedio

@@ -82,7 +82,7 @@ const LoginForm = () => {
         <section className="styled-bg login-container">
             <div className="video-container">
                 <video autoPlay muted loop>
-                    <source src="/src/assets/pexels-tima-miroshnichenko-5199830-3840x2160-25fps.mp4" type="video/mp4" />
+                    <source src="/src/assets/pexels-tima-miroshnichenko-5199830-3840x2160-25fps.webm" type="video/webm" />
                 </video>
                 <div className="caption">
                     <form onSubmit={handleSubmit}>

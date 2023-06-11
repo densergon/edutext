@@ -8,8 +8,8 @@ import HomeStudent from './pages/HomeStudent';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import AboutUsPage from './pages/AboutUsPage';
-import TeacherPage from './pages/TeacherPage';
 import DashboardPage from './pages/DashboardPage';
+import CalificacionPage from './pages/CalificacionPage';
 
 function App() {
 
@@ -20,11 +20,12 @@ function App() {
       <Routes>
         <Route path='/' element={<Index />} />
         <Route path='/login' element={<Login />} />
-        <Route path='/register' element={<Register/>}/>
-        <Route path='/aboutUs' element={<AboutUsPage/>}/>
+        <Route path='/register' element={<Register />} />
+        <Route path='/aboutUs' element={<AboutUsPage />} />
         <Route element={<ProtectedRoute isAllowed={isAuth} />}>
           <Route path='/student' element={<HomeStudent />} />
-          <Route path='/teacher' element={<DashboardPage/>} />
+          <Route path='/teacher' element={<DashboardPage />} />
+          <Route path='/calificacion' element={<CalificacionPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
