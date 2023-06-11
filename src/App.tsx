@@ -8,8 +8,10 @@ import HomeStudent from './pages/HomeStudent';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import AboutUsPage from './pages/AboutUsPage';
-import DashboardPage from './pages/DashboardPage';
-import CalificacionPage from './pages/CalificacionPage';
+import Dashboard from './pages/teacher/DashboardTeacher';
+import CalificacionPage from './pages/teacher/CalificacionPage';
+import AsignacionesTeacherPage from './pages/teacher/AsignacionesTeacherPage';
+import AgregarAsignacionPage from './pages/teacher/AgregarAsignacionPage';
 
 function App() {
 
@@ -24,7 +26,9 @@ function App() {
         <Route path='/aboutUs' element={<AboutUsPage />} />
         <Route element={<ProtectedRoute isAllowed={isAuth} />}>
           <Route path='/student' element={<HomeStudent />} />
-          <Route path='/teacher' element={<DashboardPage />} />
+          <Route path='/teacher' element={<Dashboard />} />
+          <Route path='/teacher/asignaciones' element={<AsignacionesTeacherPage />} />
+          <Route path='/teacher/agregarasignacion' element={<AgregarAsignacionPage />} />
           <Route path='/calificacion' element={<CalificacionPage />} />
         </Route>
       </Routes>

@@ -1,0 +1,39 @@
+.asignacion-box {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 80% 20%;
+    border-radius: 15px;
+}
+
+@media screen and (max-width:900px) {
+    .asignacion-box {
+        padding: 10px;
+        font-size: 12px;
+    }
+}
+
+.asignacion-detalles {
+    display: flex;
+    flex-direction: column;
+}
+
+.asignacion-acciones {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 2em 0;
+    gap: 5px;
+}
+
+@media screen and (max-width:900px) {
+    .asignacion-acciones {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        padding: 1em 0;
+        gap: 2px;
+    }
+}

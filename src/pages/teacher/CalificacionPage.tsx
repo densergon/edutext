@@ -1,6 +1,6 @@
 import { Fragment } from "react"
-import Bar from "../components/Bar"
-import Calificacion from "../components/Calificacion"
+import Bar from "../../components/Bar"
+import Calificacion from "../../components/teacher/Calificacion"
 
 const CalificacionPage = () => {
     return (

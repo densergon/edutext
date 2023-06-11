@@ -4,7 +4,7 @@
 @colorLight: #99a0b0;
 @red: #fa5b67;
 @yellow: #ffbb09;
-@bg: #f5f5fa;
+@bg: #f5f5f5;
 @bgDark: #ede8f0;
 
 * {
@@ -16,22 +16,28 @@
     display: grid;
     width: 100%;
     height: 100%;
-    padding-top: 2em;
+    padding-top: 3em;
     grid-gap: 0;
-    grid-template-columns: 300px auto;
+    grid-template-columns: 20em auto;
     grid-template-rows: 80px auto;
     grid-template-areas: 'menu search'
         'menu content';
+
+    @media (max-width: 900px) {
+
+        grid-template-columns: 10em auto;
+
+    }
 }
 
 .search-wrap {
     grid-area: search;
-    background: @white;
-    border-bottom: 1px solid @bgDark;
+    background: @bg;
+    border-bottom: 1px solid @bg;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 3em;
+    padding: 1em 3em;
 
     .search {
         height: 40px;
@@ -57,6 +63,7 @@
                 height: 100%;
                 margin: 0;
                 border: 0;
+                background: @bg;
 
                 &:focus {
                     background: @bg;
@@ -111,31 +118,24 @@
 
 .menu-wrap {
     grid-area: menu;
-    padding-bottom: 3em;
-    overflow: auto;
-    background: @white;
+    padding-top: 2em;
+    padding-bottom: 15em;
+    height: 100vh;
+    overflow: hidden;
+    background: @bg;
     border-right: 1px solid @bgDark;
 
     .user {
-        height: 80px;
+        height: 10px;
         display: flex;
         align-items: center;
         justify-content: flex-start;
         margin: 0;
         padding: 0 3em;
 
-        .user-avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            overflow: hidden;
+        @media (max-width: 900px) {
+            padding: 0;
 
-            img {
-                display: block;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
         }
 
         figcaption {
@@ -143,7 +143,7 @@
             padding: 0 0 0 1em;
             color: @colorDark;
             font-weight: 700;
-            font-size: 0.875em;
+            font-size: 1em;
             line-height: 100%;
         }
     }
@@ -151,6 +151,11 @@
     nav {
         display: block;
         padding: 0 3em;
+
+        @media (max-width: 900px) {
+            padding: 0 10px;
+
+        }
 
         section {
             display: block;
@@ -228,12 +233,14 @@
 .content-wrap {
     grid-area: content;
     padding: 3em;
-    overflow: auto;
+    overflow: hidden;
+    width: 100%;
 
     .content-head {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        width: 100%;
 
         h1 {
             font-size: 1.375em;
@@ -256,10 +263,11 @@
                 font-size: 1em;
                 text-transform: uppercase;
                 font-weight: 600;
-                transition: background-color .15s ease;
+                transition-duration: 0.3s;
 
                 &:hover {
                     background-color: darken(@blue, 10%);
+                    transform: scale(1.1);
 
                     &:active {
                         background-color: darken(@blue, 20%);
@@ -270,170 +278,119 @@
         }
     }
 
-    .info-boxes {
-        padding: 3em 0 2em;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        grid-gap: 2em;
+    .content {
+        width: 100%;
 
-        .info-box {
-            background: @white;
-            height: 160px;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            padding: 0 3em;
-            border: 1px solid @bgDark;
-            border-radius: 5px;
+        .person-boxes {
+            padding: 0;
+            margin-top: 5em;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            grid-gap: 2em;
 
-            .box-icon {
-                svg {
-                    display: block;
-                    width: 48px;
-                    height: 48px;
-
-                    path,
-                    circle {
-                        fill: @colorLight;
-                    }
-                }
+            @media (max-width:900px) {
+                margin-top: 3em;
             }
 
-            .box-content {
-                padding-left: 1.25em;
-                white-space: nowrap;
+            .person-box {
+                background: @white;
+                height: 150px;
+                text-align: center;
+                padding: 1em;
+                border: 1px solid @bgDark;
+                border-radius: 5px;
+                transition-duration: 0.3s;
 
-                .big {
-                    display: block;
-                    font-size: 2em;
-                    line-height: 150%;
-                    color: @colorDark;
+                @media (max-width:900px) {
+                    padding: 10px;
                 }
-            }
 
-            &.active {
-                svg {
-
-                    circle,
-                    path {
-                        fill: @blue;
-                    }
+                &:hover {
+                    transform: scale(1.05);
                 }
-            }
-        }
-    }
 
-    .person-boxes {
-        padding: 0;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        grid-gap: 2em;
-
-        .person-box {
-            background: @white;
-            height: 320px;
-            text-align: center;
-            padding: 3em;
-            border: 1px solid @bgDark;
-            border-radius: 5px;
-
-            &:nth-child(2n) {
                 .box-avatar {
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 50%;
+                    margin: 0px auto;
+                    overflow: hidden;
+
+                    img {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+
                     .no-name {
-                        background: @blue;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        text-align: center;
+                        color: @white;
+                        font-size: 1.5em;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        width: 100%;
+                        height: 100%;
+                        background: @red;
                     }
                 }
-            }
 
-            &:nth-child(5n) {
-                .box-avatar {
-                    .no-name {
-                        background: @yellow;
+                .box-bio {
+                    white-space: no-wrap;
+
+                    .bio-name {
+                        margin: 2em 0 .75em;
+                        color: @colorDark;
+                        font-size: 1em;
+                        font-weight: 700;
+                        line-height: 100%;
+                    }
+
+                    .bio-position {
+                        margin: 0;
+                        font-size: .875em;
+                        line-height: 100%;
                     }
                 }
-            }
 
-            .box-avatar {
-                width: 100px;
-                height: 100px;
-                border-radius: 50%;
-                margin: 0px auto;
-                overflow: hidden;
-
-                img {
-                    display: block;
+                .box-actions {
+                    margin-top: 1.25em;
+                    padding-top: 1.25em;
                     width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                }
-
-                .no-name {
+                    border-top: 1px solid @bgDark;
                     display: flex;
                     align-items: center;
-                    justify-content: center;
-                    text-align: center;
-                    color: @white;
-                    font-size: 1.5em;
-                    font-weight: 600;
-                    text-transform: uppercase;
-                    width: 100%;
-                    height: 100%;
-                    background: @red;
-                }
-            }
+                    justify-content: space-between;
 
-            .box-bio {
-                white-space: no-wrap;
+                    button {
+                        border: 0;
+                        background: none;
+                        width: 32px;
+                        height: 32px;
+                        margin: 0;
+                        padding: 0;
 
-                .bio-name {
-                    margin: 2em 0 .75em;
-                    color: @colorDark;
-                    font-size: 1em;
-                    font-weight: 700;
-                    line-height: 100%;
-                }
-
-                .bio-position {
-                    margin: 0;
-                    font-size: .875em;
-                    line-height: 100%;
-                }
-            }
-
-            .box-actions {
-                margin-top: 1.25em;
-                padding-top: 1.25em;
-                width: 100%;
-                border-top: 1px solid @bgDark;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-
-                button {
-                    border: 0;
-                    background: none;
-                    width: 32px;
-                    height: 32px;
-                    margin: 0;
-                    padding: 0;
-
-                    svg {
-                        position: relative;
-                        top: 2px;
-
-                        path,
-                        circle {
-                            fill: lighten(@colorLight, 10%);
-                            transition: fill .15s ease;
-                        }
-                    }
-
-                    &:hover {
                         svg {
+                            position: relative;
+                            top: 2px;
 
                             path,
                             circle {
-                                fill: lighten(@colorDark, 10%);
+                                fill: lighten(@colorLight, 10%);
+                                transition: fill .15s ease;
+                            }
+                        }
+
+                        &:hover {
+                            svg {
+
+                                path,
+                                circle {
+                                    fill: lighten(@colorDark, 10%);
+                                }
                             }
                         }
                     }

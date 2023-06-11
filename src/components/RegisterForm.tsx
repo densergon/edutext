@@ -1,5 +1,5 @@
 import img from '../assets/pexels-jonathan-borba-3021325-min.jpg';
-import './Register.css'
+import './styles/Register.css'
 const RegisterForm = () => {
 
     return (

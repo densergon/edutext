@@ -1,7 +1,7 @@
 import { ChangeEvent, FormEvent, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthStore } from "../store/authStore";
-import './Login.css'
+import './styles/Login.css'
 
 const LoginForm = () => {
     const emailRef = useRef<HTMLInputElement>(null);

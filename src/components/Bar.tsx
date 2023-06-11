@@ -1,4 +1,4 @@
-import { Fragment, SyntheticEvent, useEffect, useState } from "react"
+import { Fragment, SyntheticEvent, memo, useEffect, useState } from "react"
 import { Container, Nav, Navbar } from "react-bootstrap"
 import { NavLink } from "react-router-dom"
 import { useAuthStore } from "../store/authStore";
@@ -49,4 +49,4 @@ const Bar = () => {
     )
 }
 
-export default Bar
+export default memo(Bar)
