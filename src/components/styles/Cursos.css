@@ -1,0 +1,22 @@
+.lista-cursos{
+    display:grid;
+    grid-auto-rows: 10rem;
+    grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));
+    gap:1em;
+}
+.curso{
+    border: 1px solid black;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+}
+.curso span{
+    padding: 2em 0em;
+}
+
+.curso span:last-child{
+    display: flex;
+    gap: 5px;
+    padding: 3em 2em;
+}

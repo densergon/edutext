@@ -12,6 +12,7 @@ import Dashboard from './pages/teacher/DashboardTeacher';
 import CalificacionPage from './pages/teacher/CalificacionPage';
 import AsignacionesTeacherPage from './pages/teacher/AsignacionesTeacherPage';
 import AgregarAsignacionPage from './pages/teacher/AgregarAsignacionPage';
+import VerCursosPage from './pages/teacher/VerCursosPage';
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
           <Route path='/teacher' element={<Dashboard />} />
           <Route path='/teacher/asignaciones' element={<AsignacionesTeacherPage />} />
           <Route path='/teacher/agregarasignacion' element={<AgregarAsignacionPage />} />
+          <Route path='/teacher/cursos' element={<VerCursosPage/>}/>
           <Route path='/calificacion' element={<CalificacionPage />} />
         </Route>
       </Routes>
