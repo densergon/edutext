@@ -13,6 +13,9 @@ import CalificacionPage from './pages/teacher/CalificacionPage';
 import AsignacionesTeacherPage from './pages/teacher/AsignacionesTeacherPage';
 import AgregarAsignacionPage from './pages/teacher/AgregarAsignacionPage';
 import VerCursosPage from './pages/teacher/VerCursosPage';
+import AgregarCursoPage from './pages/teacher/AgregarCursoPage';
+import ScrollToTop from './components/ScrollToTop';
+import AgregarMaterialPage from './pages/teacher/AgregarMaterialPage';
 
 function App() {
 
@@ -30,10 +33,13 @@ function App() {
           <Route path='/teacher' element={<Dashboard />} />
           <Route path='/teacher/asignaciones' element={<AsignacionesTeacherPage />} />
           <Route path='/teacher/agregarasignacion' element={<AgregarAsignacionPage />} />
+          <Route path='/teacher/agregarcurso' element={<AgregarCursoPage/>}/>
+          <Route path='/teacher/agregarmaterial' element={<AgregarMaterialPage/>}/>
           <Route path='/teacher/cursos' element={<VerCursosPage/>}/>
           <Route path='/calificacion' element={<CalificacionPage />} />
         </Route>
       </Routes>
+      <ScrollToTop/>
     </BrowserRouter>
   )
 }
