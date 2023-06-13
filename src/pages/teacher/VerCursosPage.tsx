@@ -1,19 +1,19 @@
 import { Fragment } from "react"
 import Bar from "../../components/Bar"
 import Sidebar from "../../components/Sidebar"
-import VerCursos from "../../components/teacher/VerCursos"
+import VerCursosTeacher from "../../components/teacher/VerCursosTeacher"
 
 const VerCursosPage = () => {
   return (
     <Fragment>
-            <Bar />
-            <div className="dashboard">
-                <Sidebar />
-                <div className='view-container'>
-                    <VerCursos/>
-                </div>
-            </div>
-        </Fragment>
+      <Bar />
+      <div className="dashboard">
+        <Sidebar />
+        <div className='view-container'>
+          <VerCursosTeacher />
+        </div>
+      </div>
+    </Fragment>
   )
 }
 

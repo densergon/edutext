@@ -16,6 +16,9 @@ import VerCursosPage from './pages/teacher/VerCursosPage';
 import AgregarCursoPage from './pages/teacher/AgregarCursoPage';
 import ScrollToTop from './components/ScrollToTop';
 import AgregarMaterialPage from './pages/teacher/AgregarMaterialPage';
+import VerGruposPage from './pages/teacher/VerGruposTeacherPage';
+import VerGrupoTeacherPage from './pages/teacher/VerGrupoTeacherPage';
+import MiPerfilTeacherPage from './pages/teacher/MiPerfilTeacherPage';
 
 function App() {
 
@@ -33,13 +36,16 @@ function App() {
           <Route path='/teacher' element={<Dashboard />} />
           <Route path='/teacher/asignaciones' element={<AsignacionesTeacherPage />} />
           <Route path='/teacher/agregarasignacion' element={<AgregarAsignacionPage />} />
-          <Route path='/teacher/agregarcurso' element={<AgregarCursoPage/>}/>
-          <Route path='/teacher/agregarmaterial' element={<AgregarMaterialPage/>}/>
-          <Route path='/teacher/cursos' element={<VerCursosPage/>}/>
+          <Route path='/teacher/agregarcurso' element={<AgregarCursoPage />} />
+          <Route path='/teacher/agregarmaterial' element={<AgregarMaterialPage />} />
+          <Route path='/teacher/grupos' element={<VerGruposPage />} />
+          <Route path='/teacher/grupo/:id' element={<VerGrupoTeacherPage />} />
+          <Route path='/teacher/cursos' element={<VerCursosPage />} />
+          <Route path='/teacher/miperfil' element={<MiPerfilTeacherPage />} />
           <Route path='/calificacion' element={<CalificacionPage />} />
         </Route>
       </Routes>
-      <ScrollToTop/>
+      <ScrollToTop />
     </BrowserRouter>
   )
 }

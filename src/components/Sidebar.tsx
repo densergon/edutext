@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import '../components/styles/Dashboard.less'
-import {  FaUserFriends } from 'react-icons/fa'
+import { FaUserFriends } from 'react-icons/fa'
 
 const Sidebar = () => {
     return (
@@ -73,10 +73,10 @@ const Sidebar = () => {
 
 
                         <li>
-                            <a href="#">
+                            <NavLink to="/teacher/grupos">
                                 <FaUserFriends size={20} />
                                 Mis grupos
-                            </a>
+                            </NavLink>
                         </li>
 
 
@@ -86,10 +86,10 @@ const Sidebar = () => {
                     <hr />
                     <ul>
                         <li>
-                            <a href="#">
+                            <NavLink to="/teacher/miperfil">
                                 <FaUserFriends size={20} />
                                 Mi perfil
-                            </a>
+                            </NavLink>
                         </li>
                     </ul>
                 </section>
