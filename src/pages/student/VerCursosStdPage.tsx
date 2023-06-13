@@ -1,19 +1,18 @@
 import { Fragment } from "react"
-import Sidebar from "../../components/Sidebar"
 import Bar from "../../components/Bar"
+import Sidebar from "../../components/Sidebar"
 
-const VerCursoStdPage = () => {
+const VerCursosStdPage = () => {
   return (
     <Fragment>
     <Bar />
     <div className="dashboard">
-        <Sidebar />
+        <Sidebar      />
         <div className='view-container'>
-            
         </div>
     </div>
 </Fragment>
   )
 }
 
-export default VerCursoStdPage
+export default VerCursosStdPage
