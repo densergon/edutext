@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import '../components/styles/Dashboard.less'
-import { FaUserFriends } from 'react-icons/fa'
+import {  FaUserFriends } from 'react-icons/fa'
 
 const Sidebar = () => {
     return (
@@ -63,7 +63,6 @@ const Sidebar = () => {
                                 Agregar material
                             </NavLink>
                         </li>
-
 
                     </ul>
                 </section>

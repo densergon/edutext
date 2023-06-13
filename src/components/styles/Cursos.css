@@ -10,6 +10,10 @@
     display: flex;
     justify-content: space-around;
     padding: 0;
+    transition-duration: 0.3s;
+}
+.curso:hover{
+    transform: scale(1.1);
 }
 .curso span{
     padding: 2em 0em;

@@ -1,39 +1,50 @@
+import React, { useState } from "react";
+import axios from "axios";
 
-const AgregarMaterial = () => {
+const AgregarMaterial: React.FC = () => {
+  const [nombre, setNombre] = useState("");
+  const [contenido, setContenido] = useState("");
+  const [idGrupo, setIdGrupo] = useState("");
+
+  const submitForm = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      const material = {
+        nombre: nombre,
+        contenido: btoa(contenido), // Convertir el contenido a base64
+        id_grupo: idGrupo
+      };
+
+      const response = await axios.post('http://localhost:5000/materiales', material);
+
+      if(response.status === 201) {
+        alert("Material agregado exitosamente.");
+      } else {
+        alert("Hubo un error al agregar el material.");
+      }
+
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   return (
-    <div>
-      <div className="p-2">
-        <h3>Agregar material</h3>
-      </div>
-      <div className="container-fluid">
-            <div className="p-2">
-                <form>
-                    <div className="mx-2 my-3">
-                        <p>Nombre del material</p>
-                        <input type="text" className="form-control" />
-                    </div>
-                    <div className="mx-2 my-3">
-                        <p>Descripcion del material</p>
-                        <textarea className="form-control"/>
-                    </div>
-                    <div className="mx-2 my-3">
-                        <p>¿A que grupo desea asignar el material?</p>
-                        <select className="form-control">
-                            <option>2CV2</option>
-                        </select>
-                    </div>
-                    <div className="mx-2 my-3">
-                        <p>A continuacion suba el material</p>
-                        <input type="file" className="form-control" />
-                    </div>
-                    <div className="mx-2 my-3 d-flex justify-content-end">
-                        <button className="btn btn-primary my-2">Subir material</button>
-                    </div>
-                </form>
-            </div>
-      </div>
-    </div>
-  )
+    <form onSubmit={submitForm}>
+      <label>
+        Nombre:
+        <input type="text" value={nombre} onChange={e => setNombre(e.target.value)} required />
+      </label>
+      <label>
+        Contenido:
+        <input type="text" value={contenido} onChange={e => setContenido(e.target.value)} required />
+      </label>
+      <label>
+        ID del Grupo:
+        <input type="number" value={idGrupo} onChange={e => setIdGrupo(e.target.value)} required />
+      </label>
+      <button type="submit">Agregar Material</button>
+    </form>
+  );
 }
 
-export default AgregarMaterial
+export default AgregarMaterial;

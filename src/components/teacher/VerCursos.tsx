@@ -1,6 +1,11 @@
 import { FaEdit, FaTrash } from 'react-icons/fa'
 import '../styles/Cursos.css'
+import { useNavigate } from 'react-router-dom'
 const VerCursos = () => {
+    const navigate = useNavigate();
+    const curso=(id:number)=>{
+        navigate('/teacher/curso/'+id)
+    }
   return (
     <div className="container-fluid d-flex flex-column">
       <div className="container-fluid mt-3">
@@ -17,7 +22,7 @@ const VerCursos = () => {
                 <button className='btn btn-danger'><FaTrash/></button>
             </span>
         </div>
-        <div className="curso">
+        <div className="curso" onClick={()=>curso(5)}>
             <span>
             <p>Titulo del curso</p>
             <p>Asignaciones: 8</p>
