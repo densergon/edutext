@@ -1,0 +1,19 @@
+.grupos-list{
+    display: grid;
+    grid-auto-rows: 10rem;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    padding: 1em;
+    gap: 1em;
+}
+            .grupo-admin{
+                border: 1px solid black;
+                border-radius: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 1em 0.5em;
+                transition-duration: 0.3s;
+            }
+            .grupo-admin:hover{
+                transform: scale(1.1);
+            }

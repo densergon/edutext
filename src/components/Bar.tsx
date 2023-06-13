@@ -23,17 +23,32 @@ const Bar = () => {
         <NavLink to="/register" className='btn btn-primary' >Registrarme</NavLink>
     </Fragment>
 
-    const Logged = <Fragment>
+    const LoggedT = <Fragment>
         <NavLink to="/calificacion" className="nav-link">Evaluar tarea</NavLink>
         <NavLink to="/teacher" className="nav-link">Dashboard</NavLink>
         <NavLink to="/" className='nav-link' onClick={fakeLog}><FaSignOutAlt/></NavLink>
     </Fragment>
+    const LoggedA = <Fragment>
+    <NavLink to="/" className='nav-link' onClick={fakeLog}><FaSignOutAlt/></NavLink>
+</Fragment>
+const LoggedStd = <Fragment>
+<NavLink to="/" className='nav-link' onClick={fakeLog}><FaSignOutAlt/></NavLink>
+</Fragment>
+
 
 
     const [content, setContent] = useState(notLogged);
 
     useEffect(() => {
-        isAuth ? setContent(Logged) : setContent(notLogged)
+        if(isAuth){
+            if(role=="alumno"){
+                setContent(LoggedStd)
+            }else if(role=="profesor"){
+                setContent(LoggedT)
+            }else if(role=="administrador"){
+                setContent(LoggedA)
+            }
+        }
     }, [isAuth])
 
     return (

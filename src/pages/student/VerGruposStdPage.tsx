@@ -1,20 +1,21 @@
 import { Fragment } from "react"
 import Bar from "../../components/Bar"
 import Sidebar from "../../components/Sidebar"
-import VerGrupoAdmin from "../../components/admin/VerGrupoAdmin"
+import VerMisGruposStd from "../../components/student/VerMisGruposStd"
 
-const VerGrupoAdminPage = () => {
+
+const VerGruposStdPage = () => {
   return (
     <Fragment>
     <Bar />
     <div className="dashboard">
-        <Sidebar/>
+        <Sidebar />
         <div className='view-container'>
-            <VerGrupoAdmin/>
+            <VerMisGruposStd/>
         </div>
     </div>
 </Fragment>
   )
 }
 
-export default VerGrupoAdminPage
+export default VerGruposStdPage

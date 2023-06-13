@@ -17,7 +17,7 @@ const LoginForm = () => {
     const submitForm = async (event: React.FormEvent) => {
         event.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/login', { correo: email, contrasenia: password });
+            const response = await axios.post('http://127.0.0.1:5000/login', { correo: email, contrasenia: password });
             if (response.data.error) {
                 alert(response.data.error);
             } else {
@@ -46,7 +46,7 @@ const LoginForm = () => {
             } else if (role == "profesor") {
                 navigate("/teacher")
             }else if(role == "administrador"){
-                navigate("/admin")
+                navigate("/admin/vergrupos")
             }
         }
     }, [isAuth])

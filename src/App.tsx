@@ -4,7 +4,6 @@ import { ProtectedRoute } from './components/ProtectedRoutes'
 import { useAuthStore } from './store/authStore';
 import { shallow } from 'zustand/shallow';
 import Index from './pages/Index';
-import HomeStudent from './pages/HomeStudent';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import AboutUsPage from './pages/AboutUsPage';
@@ -20,6 +19,10 @@ import VerGruposPage from './pages/teacher/VerGruposTeacherPage';
 import VerGrupoTeacherPage from './pages/teacher/VerGrupoTeacherPage';
 import MiPerfilTeacherPage from './pages/teacher/MiPerfilTeacherPage';
 import VerGruposAdminPage from './pages/admin/VerGruposAdminPage';
+import VerGrupoAdminPage from './pages/admin/VerGrupoAdminPage';
+import AgregarGrupoAdminPage from './pages/admin/AgregarGrupoAdminPage';
+import MiPerfilAdminPage from './pages/admin/MiPerfilAdminPage';
+import VerGruposStdPage from './pages/student/VerGruposStdPage';
 
 function App() {
 
@@ -33,7 +36,7 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route path='/aboutUs' element={<AboutUsPage />} />
         <Route element={<ProtectedRoute isAllowed={isAuth} />}>
-          <Route path='/student' element={<HomeStudent />} />
+          <Route path='/student' element={<VerGruposStdPage/>} />
           <Route path='/teacher' element={<Dashboard />} />
           <Route path='/teacher/asignaciones' element={<AsignacionesTeacherPage />} />
           <Route path='/teacher/agregarasignacion' element={<AgregarAsignacionPage />} />
@@ -43,9 +46,12 @@ function App() {
           <Route path='/teacher/grupo/:id' element={<VerGrupoTeacherPage />} />
           <Route path='/teacher/cursos' element={<VerCursosPage />} />
           <Route path='/teacher/miperfil' element={<MiPerfilTeacherPage />} />
-          <Route path='/admin' element={<VerGruposAdminPage/>} />
+          <Route path='/admin/agregargrupo' element={<AgregarGrupoAdminPage/>}/>        
+          <Route path='/admin/vergrupos' element={<VerGruposAdminPage/>} />
           <Route path='/calificacion' element={<CalificacionPage />} />
-        </Route>
+          <Route path='/admin/grupo/:id' element={<VerGrupoAdminPage/>}/>
+          <Route path='/admin/miperfil' element={<MiPerfilAdminPage/>}/>
+          </Route>
       </Routes>
       <ScrollToTop />
     </BrowserRouter>

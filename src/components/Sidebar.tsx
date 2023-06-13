@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 import SidebarTeacher from './teacher/SidebarTeacher'
 import SiderbarAdmin from './admin/SiderbarAdmin'
 import { useAuthStore } from '../store/authStore'
+import SiderbarStd from './student/SidebarStd'
 
 const Sidebar = () => {
     const role: String = useAuthStore((state) => state.role);
@@ -16,6 +17,8 @@ const Sidebar = () => {
             setSdbar(teacher)
         }else if(role=='administrador'){
             setSdbar(admin)
+        }else if(role=='alumno'){
+            setSdbar(<SiderbarStd/>)
         }
     },[])
     return sdebar

@@ -1,20 +1,20 @@
 import { Fragment } from "react"
 import Bar from "../../components/Bar"
 import Sidebar from "../../components/Sidebar"
-import VerGrupoAdmin from "../../components/admin/VerGrupoAdmin"
+import MiPerfilAdmin from "../../components/admin/MiPerfilAdmin"
 
-const VerGrupoAdminPage = () => {
+const MiPerfilAdminPage = () => {
   return (
     <Fragment>
     <Bar />
     <div className="dashboard">
         <Sidebar/>
         <div className='view-container'>
-            <VerGrupoAdmin/>
+            <MiPerfilAdmin/>
         </div>
     </div>
 </Fragment>
   )
 }
 
-export default VerGrupoAdminPage
+export default MiPerfilAdminPage
