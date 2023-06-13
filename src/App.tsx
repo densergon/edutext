@@ -19,6 +19,7 @@ import AgregarMaterialPage from './pages/teacher/AgregarMaterialPage';
 import VerGruposPage from './pages/teacher/VerGruposTeacherPage';
 import VerGrupoTeacherPage from './pages/teacher/VerGrupoTeacherPage';
 import MiPerfilTeacherPage from './pages/teacher/MiPerfilTeacherPage';
+import VerGruposAdminPage from './pages/admin/VerGruposAdminPage';
 
 function App() {
 
@@ -42,6 +43,7 @@ function App() {
           <Route path='/teacher/grupo/:id' element={<VerGrupoTeacherPage />} />
           <Route path='/teacher/cursos' element={<VerCursosPage />} />
           <Route path='/teacher/miperfil' element={<MiPerfilTeacherPage />} />
+          <Route path='/admin' element={<VerGruposAdminPage/>} />
           <Route path='/calificacion' element={<CalificacionPage />} />
         </Route>
       </Routes>

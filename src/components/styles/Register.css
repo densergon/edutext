@@ -12,14 +12,12 @@
   
   .register-form {
     color: white;
-    width: 40vw;
-    height: 60vh;
-    padding-left: 5em;
-    padding-right: 5em;
-    padding-top: 3em;
-    background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(5px);
-    border-radius: 15px;
+   
+  }
+  @media only screen and (max-width: 1200px) {
+    .register-form{
+      background:none;
+    }
   }
   
   @media only screen and (max-width: 1200px) {
@@ -36,13 +34,10 @@
       justify-content: center;
       color: white;
       width: 80vw;
-      height: 50vh;
-      padding-left: 12vw;
-      padding-right: 12vw;
-      padding-top: 12vh;
-      padding-bottom: 12vh;
-      background-color: rgba(0, 0, 0, 0.45);
-      backdrop-filter: blur(4px);
+      height: 60vh;
+      padding: 3em 5em;
+      background-color: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(5px);
       border-radius: 15px;
     }
   }

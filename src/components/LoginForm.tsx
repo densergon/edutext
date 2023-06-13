@@ -1,7 +1,8 @@
-import { ChangeEvent, FormEvent, useEffect, useRef } from "react";
+import {  useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthStore } from "../store/authStore";
 import './styles/Login.css'
+import axios from "axios";
 
 const LoginForm = () => {
     const emailRef = useRef<HTMLInputElement>(null);
@@ -10,70 +11,42 @@ const LoginForm = () => {
     const isAuth: boolean = useAuthStore((state) => state.isAuth);
     const role: String = useAuthStore((state) => state.role);
     const { setLog, setRole } = useAuthStore();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
-
-    const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-        const { name, value } = e.target;
-
-        switch (name) {
-            case 'email':
-                if (emailRef.current) {
-                    emailRef.current.value = value;
+    const submitForm = async (event: React.FormEvent) => {
+        event.preventDefault();
+        try {
+            const response = await axios.post('http://localhost:5000/login', { correo: email, contrasenia: password });
+            if (response.data.error) {
+                alert(response.data.error);
+            } else {
+                alert(response.data.message);
+                if (response.data.tipo === 'alumno') {
+                    setRole('alumno');
+                    setLog(true)
+                } else if (response.data.tipo === 'profesor') {
+                    setRole('profesor')
+                    setLog(true)
+                } else {
+                    setRole('administrador')
+                    setLog(true)
                 }
-                break;
-            case 'password':
-                if (passwordRef.current) {
-                    passwordRef.current.value = value;
-                }
-                break;
-            default:
-                break;
-        }
-    };
-
-    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        // Acceder a los datos ingresados usando los refs
-        const email = emailRef.current;
-        const password = passwordRef.current;
-
-        // Realizar alguna acción con los datos ingresados
-        if (email && password) {
-            console.log('Email:', email.value);
-            console.log('Password:', password.value);
-        }
-        //setRole("student");
-        //setLog(true);
-
-        if (email && password) {
-            if (email.value == "student@domain.net" && password.value == 'student') {
-                alert('Estudiante')
-                setRole("student")
-                setLog(true)
-            } else if (email.value == "teacher@domain.net" && password.value == 'teacher') {
-                alert('Profesor')
-                setRole("teacher")
-                setLog(true)
             }
-        }
-
-        // Restablecer los valores de los refs
-        if (emailRef.current) {
-            emailRef.current.value = '';
-        }
-        if (passwordRef.current) {
-            passwordRef.current.value = '';
+        } catch (error) {
+            console.error('Error durante el inicio de sesión', error);
         }
     };
-
 
 
     useEffect(() => {
         if (isAuth) {
-            if (role == "student") {
+            if (role == "alumno") {
                 navigate("/student")
-            } else if (role == "teacher") {
+            } else if (role == "profesor") {
                 navigate("/teacher")
+            }else if(role == "administrador"){
+                navigate("/admin")
             }
         }
     }, [isAuth])
@@ -85,13 +58,13 @@ const LoginForm = () => {
                     <source src="/src/assets/pexels-tima-miroshnichenko-5199830-3840x2160-25fps.webm" type="video/webm" />
                 </video>
                 <div className="caption">
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={submitForm}>
                         <h2 className="ms-3 my-4">Iniciar Sesión</h2>
                         <div className="form-group mx-2 my-3">
-                            <input type="email" name="email" className="form-control" placeholder="Correo Electronico" ref={emailRef} />
+                            <input type="email" name="email" className="form-control" placeholder="Correo Electronico" value={email} onChange={(e) => setEmail(e.target.value)} />
                         </div>
                         <div className="form-group mx-2 my-3">
-                            <input type="password" className="form-control" placeholder="Contraseña" ref={passwordRef} />
+                            <input type="password" className="form-control" placeholder="Contraseña"  value={password} onChange={(e) => setPassword(e.target.value)}/>
                         </div>
                         <div className="form-group my-3">
                             <p>¿Olvidó su Contraseña?</p>

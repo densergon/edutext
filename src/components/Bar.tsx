@@ -2,6 +2,7 @@ import { Fragment, SyntheticEvent, memo, useEffect, useState } from "react"
 import { Container, Nav, Navbar } from "react-bootstrap"
 import { NavLink } from "react-router-dom"
 import { useAuthStore } from "../store/authStore";
+import { FaSignOutAlt } from "react-icons/fa";
 
 
 const Bar = () => {
@@ -25,6 +26,7 @@ const Bar = () => {
     const Logged = <Fragment>
         <NavLink to="/calificacion" className="nav-link">Evaluar tarea</NavLink>
         <NavLink to="/teacher" className="nav-link">Dashboard</NavLink>
+        <NavLink to="/" className='nav-link' onClick={fakeLog}><FaSignOutAlt/></NavLink>
     </Fragment>
 
 
