@@ -4,14 +4,14 @@ import axios from "axios";
 interface FormData {
   nombre: string;
   contenido: Blob | null; // Aquí se considera el contenido como Blob, necesitarás adaptar esto según tu manejo de archivos
-  id_curso: number | '';
+  idcurso: number;
 }
 
 const AgregarMaterial: React.FC = () => {
   const initialFormData: FormData = {
     nombre: '',
     contenido: null,
-    id_curso: '',
+    idcurso: 0,
   };
   const [formData, setFormData] = useState<FormData>(initialFormData);
 
@@ -36,7 +36,7 @@ const AgregarMaterial: React.FC = () => {
     const data = new FormData();
     data.append('nombre', formData.nombre);
     data.append('contenido', formData.contenido as Blob);
-    data.append('id_curso', formData.id_curso.toString());
+    data.append('idcurso', formData.idcurso);
 
     await  axios.post('http://127.0.0.1:5000/materiales', data);
     setFormData(initialFormData);
@@ -63,7 +63,7 @@ const AgregarMaterial: React.FC = () => {
         <div className="mx-2 my-2">
           <label>
             Grupo:
-            <select name="id_curso" value={formData.id_curso} onChange={handleInputChange} className="form-control">
+            <select name="id_curso" value={formData.idcurso} onChange={handleInputChange} className="form-control">
               <option value={1}>1</option>
             </select>
           </label>
