@@ -11,7 +11,6 @@ const RegisterForm = () => {
   
     const submitForm = async (e: React.FormEvent) => {
       e.preventDefault();
-      try {
         const usuario = {
           nombre: nombre,
           correo: correo,
@@ -26,13 +25,10 @@ const RegisterForm = () => {
           setNombre("")
           setCorreo("")
           setContrasenia("")
-        } else {
-          alert("Hubo un error al agregar el usuario.");
+        } else if(response.status === 400){
+          alert("Datos incorrectos");
         }
   
-      } catch (error) {
-        console.error(error);
-      }
     }
 
     return (

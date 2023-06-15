@@ -45,7 +45,7 @@ function App() {
           <Route path='/teacher/editarasignacion/:id' element={<EditarAsignacionPage/>}/>
           <Route path='/teacher/agregarcurso' element={<AgregarCursoPage />} />
           <Route path='/material/:id' element={<Material/>}/>
-          <Route path='/teacher/agregarmaterial' element={<AgregarMaterialPage />} />
+          <Route path='/teacher/agregarmaterial/:id' element={<AgregarMaterialPage />} />
           <Route path='/teacher/grupos' element={<VerGruposPage />} />
           <Route path='/teacher/grupo/:id' element={<VerGrupoTeacherPage />} />
           <Route path='/teacher/cursos' element={<VerCursosPage />} />
