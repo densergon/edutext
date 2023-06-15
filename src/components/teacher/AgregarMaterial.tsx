@@ -31,26 +31,16 @@ const AgregarMaterial: React.FC = () => {
     }
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async(event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
-    // Aquí necesitarías agregar lógica para enviar el formulario a tu API.
-    // Esto variará dependiendo de cómo manejes el envío de archivos en tu back-end.
-    // Como un ejemplo, puedes usar FormData de la API de la Web para enviar el archivo:
     const data = new FormData();
     data.append('nombre', formData.nombre);
     data.append('contenido', formData.contenido as Blob);
     data.append('id_curso', formData.id_curso.toString());
 
-    axios
-      .post('http://localhost:5000/materiales', data)
-      .then((response) => {
-        console.log(response);
-        setFormData(initialFormData); // Restablecer el formulario
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    await  axios.post('http://127.0.0.1:5000/materiales', data);
+    setFormData(initialFormData);
+
   };
 
   return (
