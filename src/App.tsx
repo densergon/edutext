@@ -23,6 +23,8 @@ import VerGrupoAdminPage from './pages/admin/VerGrupoAdminPage';
 import AgregarGrupoAdminPage from './pages/admin/AgregarGrupoAdminPage';
 import MiPerfilAdminPage from './pages/admin/MiPerfilAdminPage';
 import VerGruposStdPage from './pages/student/VerGruposStdPage';
+import VerAsignacionStdPage from './pages/student/VerAsignacionStdPage';
+import EditarAsignacionPage from './pages/student/EditarAsignacionPage';
 
 function App() {
 
@@ -40,6 +42,7 @@ function App() {
           <Route path='/teacher' element={<Dashboard />} />
           <Route path='/teacher/asignaciones' element={<AsignacionesTeacherPage />} />
           <Route path='/teacher/agregarasignacion' element={<AgregarAsignacionPage />} />
+          <Route path='/teacher/editarasignacion/:id' element={<EditarAsignacionPage/>}/>
           <Route path='/teacher/agregarcurso' element={<AgregarCursoPage />} />
           <Route path='/teacher/agregarmaterial' element={<AgregarMaterialPage />} />
           <Route path='/teacher/grupos' element={<VerGruposPage />} />

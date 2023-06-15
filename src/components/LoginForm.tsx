@@ -1,12 +1,10 @@
-import {  useEffect, useRef, useState } from "react";
+import {  useEffect,useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthStore } from "../store/authStore";
 import './styles/Login.css'
 import axios from "axios";
 
 const LoginForm = () => {
-    const emailRef = useRef<HTMLInputElement>(null);
-    const passwordRef = useRef<HTMLInputElement>(null);
     const navigate = useNavigate();
     const isAuth: boolean = useAuthStore((state) => state.isAuth);
     const role: String = useAuthStore((state) => state.role);
@@ -28,7 +26,7 @@ const LoginForm = () => {
                 } else if (response.data.tipo === 'profesor') {
                     setRole('profesor')
                     setLog(true)
-                } else {
+                } else if (response.data.tipo === 'administrador') {
                     setRole('administrador')
                     setLog(true)
                 }

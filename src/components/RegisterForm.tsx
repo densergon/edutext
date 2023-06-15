@@ -7,7 +7,7 @@ const RegisterForm = () => {
     const [nombre, setNombre] = useState("");
     const [correo, setCorreo] = useState("");
     const [contrasenia, setContrasenia] = useState("");
-    const [tipo, setTipo] = useState("administrador");
+    const [tipo, setTipo] = useState("profesor");
   
     const submitForm = async (e: React.FormEvent) => {
       e.preventDefault();
