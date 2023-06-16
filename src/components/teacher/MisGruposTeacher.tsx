@@ -16,7 +16,7 @@ const MisGruposTeacher: React.FC = () => {
     useEffect(() => {
         const obtenerGrupos = async () => {
             try {
-                const response = await axios.get(`url-api/profesores/${idProfesor}/grupos`);
+                const response = await axios.get(`http:127.0.0.1:5000/profesores/${idProfesor}/grupos`);
                 setGrupos(response.data);
             } catch (error) {
                 console.error('Hubo un error al obtener los grupos:', error);
