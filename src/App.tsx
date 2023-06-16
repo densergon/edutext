@@ -25,6 +25,7 @@ import MiPerfilAdminPage from './pages/admin/MiPerfilAdminPage';
 import VerGruposStdPage from './pages/student/VerGruposStdPage';
 import EditarAsignacionPage from './pages/student/EditarAsignacionPage';
 import Material from './pages/Material';
+import EditarPerfilAdminPage from './pages/admin/EditarPerfilAdminPage';
 
 function App() {
 
@@ -55,6 +56,7 @@ function App() {
           <Route path='/calificacion' element={<CalificacionPage />} />
           <Route path='/admin/grupo/:id' element={<VerGrupoAdminPage/>}/>
           <Route path='/admin/miperfil' element={<MiPerfilAdminPage/>}/>
+          <Route path='/admin/editarperfil' element={<EditarPerfilAdminPage/>}/>
           </Route>
       </Routes>
       <ScrollToTop />

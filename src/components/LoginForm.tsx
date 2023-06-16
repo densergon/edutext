@@ -8,7 +8,8 @@ const LoginForm = () => {
     const navigate = useNavigate();
     const isAuth: boolean = useAuthStore((state) => state.isAuth);
     const role: String = useAuthStore((state) => state.role);
-    const { setLog, setRole } = useAuthStore();
+    const id: number = useAuthStore((state) => state.id);
+    const { setLog, setRole,setId } = useAuthStore();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -22,12 +23,15 @@ const LoginForm = () => {
                 alert(response.data.message);
                 if (response.data.tipo === 'alumno') {
                     setRole('alumno');
+                    setId(response.data.id)
                     setLog(true)
                 } else if (response.data.tipo === 'profesor') {
                     setRole('profesor')
+                    setId(response.data.id)
                     setLog(true)
                 } else if (response.data.tipo === 'administrador') {
                     setRole('administrador')
+                    setId(response.data.id)
                     setLog(true)
                 }
             }
