@@ -9,7 +9,7 @@ interface FormData {
 }
 
 const AgregarMaterial: React.FC = () => {
-  const { id } = useParams<{ id: string }>();
+  const  id  = 1;
   const initialFormData: FormData = {
     nombre: '',
     contenido: null,

@@ -78,10 +78,10 @@ const SidebarTeacher = () => {
 
 
                         <li>
-                            <a href="#">
+                            <NavLink to="/teacher/grupos">
                                 <FaUserFriends size={20} />
                                 Mis grupos
-                            </a>
+                            </NavLink>
                         </li>
 
 
