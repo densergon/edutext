@@ -16,7 +16,7 @@ CREATE TABLE grupos (
     FOREIGN KEY (id_profesor) REFERENCES usuarios(id)
 );
 
-CREATE TABLE grupo_Alumno (
+CREATE TABLE grupo_alumno (
     id_grupo INT,
     id_alumno INT,
     PRIMARY KEY (id_grupo, id_alumno),
@@ -53,7 +53,7 @@ CREATE TABLE asignaciones (
 CREATE TABLE materiales (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(50),
-    contenido BLOB,
+    contenido LONGBLOB,
     id_curso INT, -- cambié la clave foránea de grupo a curso
     FOREIGN KEY (id_curso) REFERENCES cursos(id)
 );
@@ -63,7 +63,7 @@ CREATE TABLE entregas_asignaciones (
     id INT PRIMARY KEY AUTO_INCREMENT,
     id_asignacion INT,
     id_alumno INT,
-    entrega BLOB,
+    entrega LONGBLOB,
     fecha_entrega DATETIME,
     calificacion INT,
     FOREIGN KEY (id_asignacion) REFERENCES asignaciones(id),
